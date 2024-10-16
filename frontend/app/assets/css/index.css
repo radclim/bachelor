@@ -1,0 +1,17 @@
+@import './transitions/basic.css';
+
+/* Default values, will be overwritten by JS */
+:where(html) {
+	--visual-viewport-width: 100vw;
+	--visual-viewport-height: 100vh;
+}
+@supports (width: 100dvw) {
+	:where(html) {
+		--visual-viewport-width: 100dvw;
+		--visual-viewport-height: 100dvh;
+	}
+}
+
+body {
+	@apply overflow-x-hidden overflow-y-scroll;
+}

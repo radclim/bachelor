@@ -1,0 +1,39 @@
+/*
+	Basic transitions wihtout a set duration or
+	easing. Can be used with the TransitionExt
+	component with a set duration, and easing can
+	be set through unoCSS / context CSS.
+*/
+
+/*
+	Overwrite with unoCSS utilities on
+	the transitioned element.
+*/
+.t-all-enter-active,
+.t-all-leave-active {
+	transition: all;
+}
+
+/* fade (in-out, in and out) */
+.t-fade-in-out-enter-active,
+.t-fade-in-out-leave-active {
+	transition: opacity;
+}
+.t-fade-in-out-enter,
+.t-fade-in-out-leave-to {
+	opacity: 0;
+}
+
+.t-fade-in-enter-active {
+	transition: opacity;
+}
+.t-fade-in-enter {
+	opacity: 0;
+}
+
+.t-fade-out-leave-active {
+	transition: opacity;
+}
+.t-fade-out-leave-to {
+	opacity: 0;
+}

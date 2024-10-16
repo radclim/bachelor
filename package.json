@@ -1,0 +1,11 @@
+{
+  "name": "limbo-nuxt-boilerplate",
+  "version": "2.0.1",
+  "description": "Limbo Nuxt Boilerplate",
+  "author": "Limbo",
+  "private": true,
+  "project": {
+    "id": "0000xx",
+    "name": "Limbo"
+  }
+}
