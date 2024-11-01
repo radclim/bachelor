@@ -33,7 +33,7 @@ export default defineNuxtConfig({
 		},
 	},
 
-	modules: ['nuxt-proxy', '@limbo-works/umbraco-get-data', '@unocss/nuxt'],
+	modules: ['@limbo-works/umbraco-get-data', '@unocss/nuxt'],
 
 	buildModules: [],
 	plugins: [],
@@ -52,13 +52,7 @@ export default defineNuxtConfig({
 		// These values are protected
 		formApiKey: '',
 		// ...
-		proxy: {
-			options: {
-				target: '',
-				changeOrigin: true,
-				pathFilter: ['/media'],
-			},
-		},
+
 		public: {
 			apiDomain: '',
 			appHost: '',
