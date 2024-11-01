@@ -1,0 +1,47 @@
+FROM node:18.18.1 AS BUILD_IMAGE
+
+# Helpful for understanding workdir and copying:
+# https://stackoverflow.com/questions/55108649/what-is-app-working-directory-for-a-dockerfile
+
+# Create app directory
+WORKDIR /app
+
+# Copy dependency solutions
+# The docker build needs to be run from the root of the repository
+# docker build -t solution -f .\frontend\dockerfile .
+# COPY ./frontend-shared ./frontend-shared
+
+# Copy the solution to run
+# Copy design folder as well if using tokens
+# COPY ./design ./design
+COPY ./frontend ./solution
+
+# Install app dependencies
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# where available (npm@5+)
+#COPY package*.json ./
+#COPY .npmrc .npmrc
+
+WORKDIR /app/solution
+RUN yarn install
+# If you are building your code for production
+# RUN npm ci --only=production
+
+# Bundle app source
+
+RUN yarn build
+
+FROM node:18.18.1
+
+WORKDIR /app
+
+COPY --from=BUILD_IMAGE /app/solution .
+
+#ENV NUXT_PUBLIC_API_DOMAIN=https://dev-0000xx-be.testserver.nu/
+#ENV NUXT_PROXY_OPTIONS_TARGET=https://dev-0000xx-be.testserver.nu/
+#ENV NUXT_PUBLIC_APP_HOST=dev-0000xx-fe.testserver.nu
+ENV NUXT_PUBLIC_LOCAL_PORT=3000
+
+EXPOSE 3000
+
+CMD ["node", ".output/server/index.mjs", "-h 0.0.0.0"]

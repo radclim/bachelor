@@ -1,0 +1,31 @@
+{
+	"name": "limbo-nuxt3-boilerplate",
+	"version": "0.0.0",
+	"boilerplate-version": "2.0.0",
+	"description": "Limbo Nuxt3 Boilerplate",
+	"author": "Limbo",
+	"private": true,
+	"project": {
+		"id": "0000xx",
+		"name": "customerName"
+	},
+	"scripts": {
+		"update": "yarn && yarn upgrade && yarn nuxi upgrade --force",
+		"build": "nuxt build",
+		"dev": "set NODE_ENV=development && nuxt dev",
+		"start": "nuxt start",
+		"generate": "nuxt generate",
+		"prettier": "prettier \"**/*.{js,vue,md,yml,css,scss,json}\"",
+		"eslint": "eslint \"**/*.{js,vue}\"",
+		"lint": "yarn prettier --check && yarn eslint --quiet",
+		"lint:fix": "yarn prettier --write && yarn eslint --fix --quiet"
+	},
+	"dependencies": {
+		"@limbo-works/nuxt-core": "^3.0.5",
+		"@limbo-works/search": "^2.2.1",
+		"@limbo-works/theme-configuration": "^2.6.0",
+		"@limbo-works/umbraco-get-data": "^1.0.0",
+		"@unocss/nuxt": "0.61.6",
+		"nuxt": "^3.13.2"
+	}
+}
