@@ -1,4 +1,5 @@
 import { defineConfig } from 'unocss';
+import presetWebFonts from '@unocss/preset-web-fonts';
 import presetCore from '@limbo-works/nuxt-core/assets/js/unocss/preset-core.mjs';
 import transformerVariantGroup from '@unocss/transformer-variant-group';
 import transformerDirectives from '@limbo-works/nuxt-core/assets/js/unocss/TransformerDirectives/index.mjs';
@@ -14,10 +15,31 @@ export default defineConfig({
 		presetCore({
 			breakpoints,
 		}),
+		presetWebFonts({
+			fonts: {
+				primary: [
+					{
+						name: 'Familjen Grotesk',
+						weights: ['400', '500', '600', '700'],
+					},
+				],
+				quote: [{ name: 'Source Serif 4', weights: ['300', '600'] }],
+			},
+		}),
 	],
 	transformers: [transformerVariantGroup(), transformerDirectives()],
 
-	theme: { ...makeThemeUtilities(defaultConfig) },
+	theme: {
+		...makeThemeUtilities(defaultConfig),
+		colors: {
+			blue: '#006183',
+			orange: '#F7A941',
+			darkOrange: '#935B11',
+			gray: '#CDCDCD',
+			white: '#F2F2F2',
+			black: '#1A1A1A',
+		},
+	},
 	rules: [...makeRules(defaultConfig)],
 
 	content: {

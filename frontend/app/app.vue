@@ -1,8 +1,6 @@
 <template>
 	<div id="app">
 		<ThemeConfiguration css-layer="theme-config" />
-		<SiteHeader />
-
 		<main id="main">
 			<NuxtPage />
 		</main>

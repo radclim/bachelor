@@ -37,6 +37,7 @@ export default {
 		// 	value: 'var(--some-value)',
 		// 	isListedRgb: true,
 		// },
+		color1: '#4287f5',
 	},
 	// You can also set background colors, text colors and border colors separately
 	// backgroundColors: {},
