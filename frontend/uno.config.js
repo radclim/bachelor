@@ -23,7 +23,13 @@ export default defineConfig({
 						weights: ['400', '500', '600', '700'],
 					},
 				],
-				quote: [{ name: 'Source Serif 4', weights: ['300', '600'] }],
+				quote: [
+					{
+						name: 'Source Serif Pro',
+						weights: ['300', '400', '600'],
+						italic: true,
+					},
+				],
 			},
 		}),
 	],
@@ -38,6 +44,7 @@ export default defineConfig({
 			gray: '#CDCDCD',
 			white: '#F2F2F2',
 			black: '#1A1A1A',
+			darkGray: '#212121',
 		},
 	},
 	rules: [...makeRules(defaultConfig)],
