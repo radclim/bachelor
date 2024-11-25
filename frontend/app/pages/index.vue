@@ -1,35 +1,44 @@
 <template>
 	<div class="p-index">
 		<SiteHeader />
-		<section
-			class="absolute top-0 z-0 h-[40em] w-[100vw] flex items-center justify-center bg-[url('/assets/images/hero.png')] bg-cover bg-center"
-			style="background-image: url('/_nuxt/assets/images/hero.png')"
-		>
-			<div class="absolute inset-0 z-1 bg-blue/25"></div>
-			<div
-				class="absolute inset-0 z-2 bg-gradient-to-b from-black to-transparent/60"
-			></div>
-
-			<div class="flex flex-col gap-[3em] items-center z-3">
-				<h1 class="text-white font-primary font-bold text-[4.5em]">
-					Muskelmekanikeren
-				</h1>
-				<p
-					class="text-white font-quote font-semibold text-[2em] italic"
-				>
-					Fysioterapi, akupunktur og personlig træning i Vejle
-				</p>
-				<div class="flex gap-[2em]">
-					<CTAButton
-						class="bg-black text-white"
-						:text="'Se ydelser'"
-					/>
-					<CTAButton
-						class="bg-orange hover:bg-darkOrange"
-						:text="'Bestil tid'"
-					/>
-				</div>
-			</div>
-		</section>
+		<Hero />
+		<Quote />
+		<Gallery :images="images" />
+		<Services id="services" />
+		<About id="about" />
+		<Gallery :images="images2" />
+		<Reviews id="reviews" />
+		<Footer id="contact" />
 	</div>
 </template>
+<script setup>
+const images = [
+	{
+		url: '/_nuxt/assets/images/cycle.jpg',
+		alt: 'To personer på indendørs cykler',
+	},
+	{
+		url: '/_nuxt/assets/images/track.jpg',
+		alt: 'Træningsudstyr liggende på en banemark',
+	},
+	{
+		url: '/_nuxt/assets/images/stretch.jpg',
+		alt: 'En person hjælper en anden med at strække ud',
+	},
+];
+const images2 = [
+	{
+		url: '/_nuxt/assets/images/dennis.jpg',
+		alt: 'Dennis Okholm fysioterapeut står smilende',
+	},
+	{
+		url: '/_nuxt/assets/images/laying.jpg',
+		alt: 'En person hjælper en anden liggende med at strække ud',
+	},
+];
+</script>
+<style lang="postcss">
+* {
+	scroll-behavior: smooth;
+}
+</style>
