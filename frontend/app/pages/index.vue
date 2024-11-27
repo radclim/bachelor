@@ -1,7 +1,7 @@
 <template>
 	<div class="p-index">
 		<SiteHeader />
-		<Hero />
+		<Hero id="hero" />
 		<Quote />
 		<Gallery :images="images" />
 		<Services id="services" />

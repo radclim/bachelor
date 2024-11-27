@@ -3,26 +3,38 @@
 		<div class="bg-black text-white font-primary p-3.5em">
 			<h2 class="text-2em mb-1em font-semibold">Kontakt</h2>
 			<p class="text-1.25em font-semibold">Send en besked</p>
-			<nuxt-link to="" class="flex gap-0.5em items-center py-1.25em">
+			<nuxt-link
+				to="https://www.facebook.com/messages/t/110707600446938"
+				target="_blank"
+				class="flex gap-0.5em items-center my-1.25em w-fit h-fit"
+			>
 				<img
 					src="../assets/svgs/messenger.svg"
 					alt="messenger logo"
 					class="w-[1.5em]"
 				/>
-				<p>Skriv i Messenger chat</p>
+				<p
+					class="hover:(text-orange cursor-pointer) transition duration-300"
+				>
+					Skriv i Messenger chat
+				</p>
 			</nuxt-link>
 			<hr />
 			<p class="text-1.25em font-semibold pt-1em">Send en email</p>
 			<nuxt-link
 				to="mailto:kontakt@muskelmekanikeren.dk"
-				class="flex gap-0.5em items-center py-1.25em w-fit"
+				class="flex gap-0.5em items-center my-1.25em w-fit"
 			>
 				<img
 					src="../assets/svgs/mail.svg"
 					alt="messenger logo"
 					class="w-[1.5em]"
 				/>
-				<p>kontakt@muskelmekanikeren.dk</p>
+				<p
+					class="hover:(text-orange cursor-pointer) transition duration-300"
+				>
+					kontakt@muskelmekanikeren.dk
+				</p>
 			</nuxt-link>
 
 			<hr />
@@ -32,14 +44,18 @@
 					<nuxt-link
 						to="https://www.facebook.com/profile.php?id=100057581943834"
 						target="_blank"
-						class="flex gap-[0.5em] items-center h-fit pt-1em"
+						class="flex gap-[0.5em] items-center h-fit mt-1em"
 					>
 						<img
 							src="../assets/svgs/facebook.svg"
 							alt="facebook logo"
 							class="w-[1.5em]"
 						/>
-						<p>Facebook</p>
+						<p
+							class="hover:(text-orange cursor-pointer) transition duration-300"
+						>
+							Facebook
+						</p>
 					</nuxt-link>
 					<nuxt-link
 						to="https://www.instagram.com/muskelmekanikeren?fbclid=IwY2xjawGxMXJleHRuA2FlbQIxMAABHdhN3tAkHSxa1V_1SZhXc6GV4HUsfRcpKbaNmD4KA3a1F4tqCvTh2h9R_A_aem_qEphyaW2X4FBPLSZBMLWOA"
@@ -51,7 +67,11 @@
 							alt="instagram logo"
 							class="w-[1.5em]"
 						/>
-						<p>Instagram</p>
+						<p
+							class="hover:(text-orange cursor-pointer) transition duration-300"
+						>
+							Instagram
+						</p>
 					</nuxt-link>
 				</div>
 				<img

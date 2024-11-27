@@ -1,6 +1,13 @@
 <template>
-	<header class="c-site-header" :class="{ 'bg-black': isScrolled }">
-		<img src="../assets/svgs/logo.svg" alt="" class="flex-shrink-0 z-20" />
+	<header class="c-site-header bg-black">
+		<nuxt-link to="#hero">
+			<img
+				src="../assets/svgs/logo.svg"
+				alt=""
+				class="flex-shrink-0 z-20"
+			/>
+		</nuxt-link>
+		<!-- Regular menu -->
 		<nav
 			class="font-primary font-medium text-white >=1024:(flex flex-grow justify-center) hidden"
 		>
@@ -47,7 +54,7 @@
 				class="w-2em cursor-pointer z-20 block relative >=1024:(hidden)"
 			/>
 		</button>
-
+		<!-- Burger menu -->
 		<div
 			v-if="isVisible"
 			class="absolute z-30 h-100vh w-100vw px-3em bg-white top-0 right-0 >=1024:hidden"
@@ -74,6 +81,7 @@
 						<nuxt-link
 							class="cursor-pointer c-site-header__link"
 							to="#services"
+							@click="toggleMenu"
 							>Ydelser</nuxt-link
 						>
 					</li>
@@ -82,6 +90,7 @@
 						<nuxt-link
 							class="cursor-pointer c-site-header__link"
 							to="#about"
+							@click="toggleMenu"
 							>Om mig</nuxt-link
 						>
 					</li>
@@ -91,6 +100,7 @@
 						<nuxt-link
 							class="cursor-pointer c-site-header__link"
 							to="#reviews"
+							@click="toggleMenu"
 							>Anmeldelser</nuxt-link
 						>
 					</li>
@@ -100,6 +110,7 @@
 						<nuxt-link
 							class="cursor-pointer c-site-header__link"
 							to="#contact"
+							@click="toggleMenu"
 							>Kontakt</nuxt-link
 						>
 					</li>
@@ -114,16 +125,52 @@ import { onMounted } from 'vue';
 
 const isVisible = ref(false);
 const isScrolled = ref(0);
+const windowWidth = ref(0);
 
 function toggleMenu() {
 	isVisible.value = !isVisible.value;
 }
+
+watch(isVisible, (newValue) => {
+	// Only run this in the browser
+	if (import.meta.client) {
+		if (newValue) {
+			document.body.style.overflow = 'hidden'; // Disable scrolling
+		} else {
+			document.body.style.overflow = ''; // Restore default scrolling
+		}
+	}
+});
+
+watch(windowWidth, (newWidth) => {
+	if (newWidth > 1024) {
+		isVisible.value = false; // Hide menu if the window is larger than 1024px
+	}
+});
+
 onMounted(() => {
+	windowWidth.value = window.innerWidth; // Set initial window width
+
+	const handleResize = () => {
+		windowWidth.value = window.innerWidth; // Update windowWidth on resize
+	};
+
+	window.addEventListener('resize', handleResize);
+
+	// Set initial state based on window size
+	if (window.innerWidth > 1024) {
+		isVisible.value = false; // Ensure isVisible is false on initial load for large screens
+	}
+
 	const handleScroll = () => {
 		isScrolled.value = window.scrollY > 50;
 	};
 
 	window.addEventListener('scroll', handleScroll);
+});
+onUnmounted(() => {
+	window.removeEventListener('resize', handleResize);
+	window.removeEventListener('scroll', handleScroll);
 });
 </script>
 <style lang="postcss">
