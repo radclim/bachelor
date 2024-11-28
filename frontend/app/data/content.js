@@ -2,19 +2,19 @@ export default {
 	headerContent: [
 		{
 			title: 'Ydelser',
-			url: '#services',
+			url: '/#services',
 		},
 		{
 			title: 'Om mig',
-			url: '#about',
+			url: '/#about',
 		},
 		{
 			title: 'Anmeldelser',
-			url: '#reviews',
+			url: '/#reviews',
 		},
 		{
 			title: 'Kontakt',
-			url: '#contact',
+			url: '/#contact',
 		},
 	],
 	heroContent: {

@@ -1,6 +1,6 @@
 <template>
 	<header class="c-site-header bg-black">
-		<nuxt-link to="#hero">
+		<nuxt-link to="/#hero">
 			<img
 				src="../assets/svgs/logo.svg"
 				alt=""
