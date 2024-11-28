@@ -10,10 +10,10 @@
 
 		<div class="flex flex-col gap-[3em] items-center z-3">
 			<h1 class="text-white font-primary font-bold text-[4.5em]">
-				Muskelmekanikeren
+				{{ content.title }}
 			</h1>
 			<p class="text-white font-quote font-semibold text-[2em] italic">
-				Fysioterapi, akupunktur og personlig træning i Vejle
+				{{ content.subtitle }}
 			</p>
 			<div class="flex gap-[2em]">
 				<CTAButton
@@ -28,5 +28,9 @@
 		</div>
 	</section>
 </template>
-<script setup></script>
+<script setup>
+defineProps({
+	content: Object,
+});
+</script>
 <style></style>

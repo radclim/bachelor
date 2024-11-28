@@ -12,32 +12,11 @@
 			class="font-primary font-medium text-white >=1024:(flex flex-grow justify-center) hidden"
 		>
 			<ul class="flex gap-[5em]">
-				<li>
+				<li v-for="(link, index) in links" :key="index">
 					<nuxt-link
+						:to="link.url"
 						class="cursor-pointer c-site-header__link"
-						to="#services"
-						>Ydelser</nuxt-link
-					>
-				</li>
-				<li>
-					<nuxt-link
-						class="cursor-pointer c-site-header__link"
-						to="#about"
-						>Om mig</nuxt-link
-					>
-				</li>
-				<li>
-					<nuxt-link
-						class="cursor-pointer c-site-header__link"
-						to="#reviews"
-						>Anmeldelser</nuxt-link
-					>
-				</li>
-				<li>
-					<nuxt-link
-						class="cursor-pointer c-site-header__link"
-						to="#contact"
-						>Kontakt</nuxt-link
+						>{{ link.title }}</nuxt-link
 					>
 				</li>
 			</ul>
@@ -46,7 +25,7 @@
 			class="bg-orange hover:bg-darkOrange hidden >=1024:(block)"
 			:text="'Bestil tid'"
 		/>
-
+		<!-- Burger menu -->
 		<button v-if="!isVisible" @click="toggleMenu">
 			<img
 				src="../assets/svgs/bars.svg"
@@ -54,7 +33,6 @@
 				class="w-2em cursor-pointer z-20 block relative >=1024:(hidden)"
 			/>
 		</button>
-		<!-- Burger menu -->
 		<div
 			v-if="isVisible"
 			class="absolute z-30 h-100vh w-100vw px-3em bg-white top-0 right-0 >=1024:hidden"
@@ -76,44 +54,18 @@
 			<nav
 				class="font-primary font-medium text-1.5em text-black pt-2em >=1024:hidden flex"
 			>
-				<ul class="flex flex-col gap-[2em] w-full">
-					<li>
-						<nuxt-link
-							class="cursor-pointer c-site-header__link"
-							to="#services"
-							@click="toggleMenu"
-							>Ydelser</nuxt-link
-						>
-					</li>
-					<hr />
-					<li>
-						<nuxt-link
-							class="cursor-pointer c-site-header__link"
-							to="#about"
-							@click="toggleMenu"
-							>Om mig</nuxt-link
-						>
-					</li>
-					<hr />
-
-					<li>
-						<nuxt-link
-							class="cursor-pointer c-site-header__link"
-							to="#reviews"
-							@click="toggleMenu"
-							>Anmeldelser</nuxt-link
-						>
-					</li>
-					<hr />
-
-					<li>
-						<nuxt-link
-							class="cursor-pointer c-site-header__link"
-							to="#contact"
-							@click="toggleMenu"
-							>Kontakt</nuxt-link
-						>
-					</li>
+				<ul class="flex flex-col w-full">
+					<div v-for="(link, index) in links" :key="index">
+						<li>
+							<nuxt-link
+								:to="link.url"
+								class="cursor-pointer py-2em c-site-header__link"
+								@click="toggleMenu"
+								>{{ link.title }}</nuxt-link
+							>
+						</li>
+						<hr />
+					</div>
 				</ul>
 			</nav>
 		</div>
@@ -121,7 +73,9 @@
 </template>
 
 <script setup>
-import { onMounted } from 'vue';
+defineProps({
+	links: Array,
+});
 
 const isVisible = ref(false);
 const isScrolled = ref(0);
@@ -135,7 +89,7 @@ watch(isVisible, (newValue) => {
 	// Only run this in the browser
 	if (import.meta.client) {
 		if (newValue) {
-			document.body.style.overflow = 'hidden'; // Disable scrolling
+			document.body.style.overflow = 'hidden'; // Disable scrolling when burger menu is open
 		} else {
 			document.body.style.overflow = ''; // Restore default scrolling
 		}
@@ -144,28 +98,20 @@ watch(isVisible, (newValue) => {
 
 watch(windowWidth, (newWidth) => {
 	if (newWidth > 1024) {
-		isVisible.value = false; // Hide menu if the window is larger than 1024px
+		isVisible.value = false; // Hide burger menu if the window is larger than 1024px
 	}
 });
 
 onMounted(() => {
-	windowWidth.value = window.innerWidth; // Set initial window width
-
+	windowWidth.value = window.innerWidth;
 	const handleResize = () => {
-		windowWidth.value = window.innerWidth; // Update windowWidth on resize
+		windowWidth.value = window.innerWidth;
 	};
-
 	window.addEventListener('resize', handleResize);
-
-	// Set initial state based on window size
-	if (window.innerWidth > 1024) {
-		isVisible.value = false; // Ensure isVisible is false on initial load for large screens
-	}
 
 	const handleScroll = () => {
 		isScrolled.value = window.scrollY > 50;
 	};
-
 	window.addEventListener('scroll', handleScroll);
 });
 onUnmounted(() => {
