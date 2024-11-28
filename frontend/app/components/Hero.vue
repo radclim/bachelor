@@ -19,6 +19,8 @@
 				<CTAButton
 					class="bg-black hover:bg-darkGray text-white"
 					:text="'Se ydelser'"
+					:url="'/#services'"
+					internal
 				/>
 				<CTAButton
 					class="bg-orange hover:bg-darkOrange"
