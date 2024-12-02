@@ -10,6 +10,6 @@ defineProps({
 </script>
 <style lang="postcss">
 :where(.c-watermark) {
-	@apply absolute right-[15em] w-[20em] -z-1 opacity-20;
+	@apply absolute w-[15em] inset-0 m-auto z-1 opacity-50  flex justify-center items-center;
 }
 </style>

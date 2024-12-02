@@ -18,4 +18,7 @@ import content from '~/data/content.js';
 * {
 	scroll-behavior: smooth;
 }
+:where(.p-index) {
+	@apply bg-white;
+}
 </style>

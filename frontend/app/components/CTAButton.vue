@@ -7,7 +7,7 @@
 					: 'https://www.facebook.com/messages/t/110707600446938'
 			"
 			:target="internal ? '' : '_blank'"
-			class="block py-1em w-10em"
+			class="block pt-1em pb-1em w-8em"
 			>{{ text }}</nuxt-link
 		>
 	</div>
@@ -21,6 +21,6 @@ defineProps({
 </script>
 <style lang="postcss">
 :where(.c-cta-button) {
-	@apply font-primary font-semibold text-black block w-[10em] h-fit text-center rounded-5px transition-all duration-300 ease hover:cursor-pointer;
+	@apply flex justify-center font-primary font-semibold text-black block h-fit text-center rounded-5px transition-all duration-300 ease hover:cursor-pointer;
 }
 </style>

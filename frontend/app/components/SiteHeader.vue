@@ -4,7 +4,7 @@
 			<img
 				src="../assets/svgs/logo.svg"
 				alt=""
-				class="flex-shrink-0 z-20"
+				class="flex-shrink-0 z-20 h-[4rem]"
 			/>
 		</nuxt-link>
 		<!-- Regular menu -->
@@ -33,42 +33,44 @@
 				class="w-2em cursor-pointer z-20 block relative >=1024:(hidden)"
 			/>
 		</button>
-		<div
-			v-if="isVisible"
-			class="absolute z-30 h-100vh w-100vw px-3em bg-white top-0 right-0 >=1024:hidden"
-		>
-			<div class="flex justify-between h-5em py-1em">
-				<img
-					src="../assets/svgs/logo_black.svg"
-					alt=""
-					class="flex-shrink-0 h-3.5em z-20"
-				/>
-				<button v-if="isVisible" @click="toggleMenu">
-					<img
-						src="../assets/svgs/bars_black.svg"
-						alt=""
-						class="w-2em cursor-pointer z-20 block relative >=1024:(hidden)"
-					/>
-				</button>
-			</div>
-			<nav
-				class="font-primary font-medium text-1.5em text-black pt-2em >=1024:hidden flex"
+		<Transition mode="out-in">
+			<div
+				v-if="isVisible"
+				class="absolute z-10 min-h-fit h-120vh >=768:px-2em px-[1em] w-100vw bg-white top-0 right-0 overflow-hidden >=1024:hidden"
 			>
-				<ul class="flex flex-col w-full">
-					<div v-for="(link, index) in links" :key="index">
-						<li>
-							<nuxt-link
-								:to="link.url"
-								class="cursor-pointer py-2em c-site-header__link"
-								@click="toggleMenu"
-								>{{ link.title }}</nuxt-link
-							>
-						</li>
-						<hr />
-					</div>
-				</ul>
-			</nav>
-		</div>
+				<div class="flex justify-between items-center h-5em py-1em">
+					<img
+						src="../assets/svgs/logo_black.svg"
+						alt=""
+						class="flex-shrink-0 h-[4rem] z-20"
+					/>
+					<button v-if="isVisible" @click="toggleMenu">
+						<img
+							src="../assets/svgs/bars_black.svg"
+							alt=""
+							class="w-2em cursor-pointer z-20 block relative >=1024:(hidden)"
+						/>
+					</button>
+				</div>
+				<nav
+					class="font-primary font-medium text-1.25rem text-black pt-2rem >=1024:hidden flex"
+				>
+					<ul class="flex flex-col w-full">
+						<div v-for="(link, index) in links" :key="index">
+							<li>
+								<nuxt-link
+									:to="link.url"
+									class="cursor-pointer py-1em c-site-header__link"
+									@click="toggleMenu"
+									>{{ link.title }}</nuxt-link
+								>
+							</li>
+							<hr />
+						</div>
+					</ul>
+				</nav>
+			</div>
+		</Transition>
 	</header>
 </template>
 
@@ -121,7 +123,7 @@ onUnmounted(() => {
 </script>
 <style lang="postcss">
 :where(.c-site-header) {
-	@apply flex justify-between items-center h-[5em] py-[1em] px-[3em] sticky top-0 z-10 transition-all duration-300 ease;
+	@apply flex justify-between items-center h-[20rem] py-[1em] >=768:px-2em px-[1em] sticky top-0 z-10 transition-all duration-300 ease;
 }
 .c-site-header__link {
 	display: inline-block;
@@ -145,5 +147,14 @@ onUnmounted(() => {
 		transform: scaleX(1);
 		transform-origin: bottom center;
 	}
+}
+.v-enter-active,
+.v-leave-active {
+	transition: opacity 0.3s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+	opacity: 0;
 }
 </style>

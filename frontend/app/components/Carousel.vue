@@ -1,16 +1,22 @@
 <template>
-	<div class="c-carousel" @mouseenter="pauseTimer" @mouseleave="startTimer">
-		<div class="w-full h-[18em] border-1 border-black rounded-5px">
+	<div class="c-carousel">
+		<div
+			class="w-full >=605:h-[15em] h-[25em] border-1 border-black rounded-5px"
+			@mouseenter="pauseTimer"
+			@mouseleave="startTimer"
+		>
 			<transition :name="transitionName" mode="out-in">
-				<div :key="isVisible" class="p-[2em]">
-					<p class="font-primary font-semibold text-[2em] mb-[0.5em]">
+				<div :key="isVisible" class="p-[1em]">
+					<p
+						class="font-primary font-semibold text-[1.25rem] mb-[0.5em]"
+					>
 						{{ items[isVisible].name }}
 					</p>
 					<p class="font-primary text-blue mb-[1em]">
 						{{ items[isVisible].job }}
 					</p>
 					<p
-						class="font-quote font-regular italic text-[1.5em] leading-[1.25em]"
+						class=">=1024:text-[1.25rem] font-quote font-regular italic leading-[1.25em]"
 					>
 						{{ items[isVisible].text }}
 					</p>
@@ -21,13 +27,13 @@
 			<span
 				v-for="(item, index) in items"
 				:key="index"
-				class="h-[2em] w-[2em] border-1 border-solid border-black rounded-50% flex items-center justify-center cursor-pointer"
+				class="h-[1.25em] w-[1.25em] border-1 border-solid border-black rounded-50% flex items-center justify-center cursor-pointer"
 				@click="setIndex(index)"
 			>
 				<transition name="dots">
 					<span
 						v-if="isVisible == index"
-						class="h-[1.5em] w-[1.5em] bg-blue rounded-50% block"
+						class="h-[1em] w-[1em] bg-blue rounded-50% block"
 					></span> </transition
 			></span>
 		</div>
@@ -87,7 +93,7 @@ onUnmounted(() => {
 
 <style lang="postcss">
 :where(.c-carousel) {
-	@apply flex flex-col items-center gap-[2em] overflow-hidden;
+	@apply flex flex-col items-center gap-[2em] overflow-hidden relative z-2;
 }
 
 .fade-left-enter-active,

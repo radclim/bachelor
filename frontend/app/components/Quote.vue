@@ -1,7 +1,7 @@
 <template>
 	<div class="c-quote">
 		<p
-			class="text-black font-quote italic text-[2em] leading-[1em] relative z-5"
+			class="text-black font-quote relative text-center italic text-1.25rem z-5 >=1280:(px-15em) p-1em >=605:(py-2em px-5em)"
 		>
 			{{ content.text }}
 		</p>
@@ -15,6 +15,6 @@ defineProps({
 </script>
 <style lang="postcss">
 :where(.c-quote) {
-	@apply px-[10em] py-[5em] relative;
+	@apply relative;
 }
 </style>

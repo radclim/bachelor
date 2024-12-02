@@ -1,6 +1,6 @@
 <template>
 	<div class="c-footer">
-		<div class="bg-black text-white font-primary p-3.5em">
+		<div class="bg-black text-white font-primary px-1em py-3em">
 			<h2 class="text-2em mb-1em font-semibold">
 				{{ content[0].title }}
 			</h2>
@@ -83,7 +83,7 @@
 				<img
 					src="../assets/svgs/logo.svg"
 					alt="brand logo"
-					class="w-6em absolute right-0 -top-1.25em"
+					class="w-6em absolute right-0 -top-1.25em invisible >=605:visible"
 				/>
 			</div>
 		</div>
