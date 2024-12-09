@@ -1,7 +1,7 @@
 <template>
 	<section
 		class="relative z-2 h-[25rem] >=605:h-[35rem] w-[100vw] flex items-center justify-center bg-[url('/assets/images/hero.png')] bg-cover bg-center"
-		style="background-image: url('/_nuxt/assets/images/hero.png')"
+		style="background-image: url('/_nuxt/assets/images/hero.webp')"
 	>
 		<div class="absolute inset-0 z-1 bg-blue/25"></div>
 		<div

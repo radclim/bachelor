@@ -26,15 +26,15 @@ export default {
 	},
 	gallery1: [
 		{
-			url: '/_nuxt/assets/images/cycle.jpg',
+			url: '/_nuxt/assets/images/cycle.webp',
 			alt: 'To personer på indendørs cykler',
 		},
 		{
-			url: '/_nuxt/assets/images/track.jpg',
+			url: '/_nuxt/assets/images/track.webp',
 			alt: 'Træningsudstyr liggende på en banemark',
 		},
 		{
-			url: '/_nuxt/assets/images/stretch.jpg',
+			url: '/_nuxt/assets/images/stretch.webp',
 			alt: 'En person hjælper en anden med at strække ud',
 		},
 	],
@@ -88,11 +88,11 @@ export default {
 	},
 	gallery2: [
 		{
-			url: '/_nuxt/assets/images/dennis.jpg',
+			url: '/_nuxt/assets/images/dennis.webp',
 			alt: 'Dennis Okholm fysioterapeut står smilende',
 		},
 		{
-			url: '/_nuxt/assets/images/laying.jpg',
+			url: '/_nuxt/assets/images/laying.webp',
 			alt: 'En person hjælper en anden liggende med at strække ud',
 		},
 	],
