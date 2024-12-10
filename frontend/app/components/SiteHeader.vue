@@ -1,6 +1,6 @@
 <template>
 	<header class="c-site-header bg-black">
-		<nuxt-link to="/#hero">
+		<nuxt-link to="/#hero" aria-label="Scroll to top">
 			<img
 				src="../assets/svgs/logo.svg"
 				alt=""
@@ -26,7 +26,11 @@
 			:text="'Bestil tid'"
 		/>
 		<!-- Burger menu -->
-		<button v-if="!isVisible" @click="toggleMenu">
+		<button
+			v-if="!isVisible"
+			aria-label="Burger menu icon"
+			@click="toggleMenu"
+		>
 			<img
 				src="../assets/svgs/bars.svg"
 				alt=""

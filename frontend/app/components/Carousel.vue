@@ -28,7 +28,9 @@
 				v-for="(item, index) in items"
 				:key="index"
 				class="h-[1.25em] w-[1.25em] border-1 border-solid border-black rounded-50% flex items-center justify-center cursor-pointer"
+				tabindex="0"
 				@click="setIndex(index)"
+				@keydown.enter="setIndex(index)"
 			>
 				<transition name="dots">
 					<span

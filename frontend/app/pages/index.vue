@@ -1,5 +1,9 @@
 <template>
 	<div class="p-index">
+		<Title
+			>Muskelmekanikeren - Fysioterapi, akupunktur og personlig træning i
+			Vejle</Title
+		>
 		<SiteHeader :links="content.headerContent" />
 		<Hero id="hero" :content="content.heroContent" />
 		<Quote :content="content.quoteContent" />
@@ -13,6 +17,18 @@
 </template>
 <script setup>
 import content from '~/data/content.js';
+useHead({
+	htmlAttrs: {
+		lang: 'en',
+	},
+	meta: [
+		{
+			name: 'description',
+			content:
+				'Muskelmekanikeren tilbyder professionel fysioterapi, massage og genoptræning i Vejle. Effektiv behandling til smerter og skader. Book tid i dag!',
+		},
+	],
+});
 </script>
 <style lang="postcss">
 * {

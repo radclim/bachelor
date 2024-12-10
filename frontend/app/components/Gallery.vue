@@ -5,14 +5,20 @@
 			:key="index"
 			class="relative"
 			:class="{
-				'>=1920:h-[30em] >=605:( h-[20em]) w-33%': images.length == 3,
-				'>=1920:h-[50em] >=605:( h-[30em]) w-50%': images.length == 2,
+				'>=1920:h-[30em] >=605:( h-[20em]) w-33vw': images.length == 3,
+				'>=1920:h-[50em] >=605:( h-[30em]) w-50vw': images.length == 2,
 			}"
 		>
 			<img
 				:src="image.url"
 				:alt="image.alt"
-				class="h-full w-full object-cover object-center"
+				class="object-cover object-center"
+				:class="{
+					'>=1920:h-[30em] >=605:( h-[20em]) w-33vw':
+						images.length == 3,
+					'>=1920:h-[50em] >=605:( h-[30em]) w-50vw':
+						images.length == 2,
+				}"
 			/>
 			<div class="absolute inset-0 z-1 bg-blue/25"></div>
 		</div>
