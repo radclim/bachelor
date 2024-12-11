@@ -1,6 +1,8 @@
 <template>
 	<div class="c-footer">
-		<div class="bg-black text-white font-primary px-1em py-3em">
+		<div
+			class="bg-black text-white font-primary >=1280:px-[4em] >=1024:px-[2em] px-1em py-3em"
+		>
 			<h2 class="text-2em mb-1em font-semibold">
 				{{ content[0].title }}
 			</h2>
@@ -87,7 +89,12 @@
 				/>
 			</div>
 		</div>
-		<div></div>
+		<div
+			class="font-primary flex >=1280:(pl-4rem pr-4rem) >=1024:(pl-2rem pr-[2rem]) >=605:(flex-row justify-between) flex-col items-center text-center gap-1rem p-1rem"
+		>
+			<p>Muskelmekanikeren Blegbanken 3, 7100 Vejle</p>
+			<p>Copyright © 2024 Muskelmekanikeren</p>
+		</div>
 	</div>
 </template>
 <script setup>

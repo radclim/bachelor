@@ -15,6 +15,6 @@ defineProps({
 </script>
 <style lang="postcss">
 :where(.c-quote) {
-	@apply relative;
+	@apply relative overflow-hidden;
 }
 </style>

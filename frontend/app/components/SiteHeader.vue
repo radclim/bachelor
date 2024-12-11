@@ -1,5 +1,5 @@
 <template>
-	<header class="c-site-header bg-black">
+	<header class="c-site-header">
 		<nuxt-link to="/#hero" aria-label="Scroll to top">
 			<img
 				src="../assets/svgs/logo.svg"
@@ -127,31 +127,34 @@ onUnmounted(() => {
 </script>
 <style lang="postcss">
 :where(.c-site-header) {
-	@apply flex justify-between items-center h-[20rem] py-[1em] >=768:px-2em px-[1em] sticky top-0 z-10 transition-all duration-300 ease;
+	@apply bg-black flex justify-between items-center h-[20rem] py-[1em] >=768:px-2em px-[1em] sticky top-0 z-10 transition-all duration-300 ease;
 }
 .c-site-header__link {
 	display: inline-block;
 	position: relative;
 }
-@media (hover: hover) {
-	.c-site-header__link::after {
-		content: '';
-		position: absolute;
-		width: 100%;
-		transform: scaleX(0);
-		height: 2px;
-		bottom: 0;
-		left: 0;
-		background-color: #006183;
-		transform-origin: bottom center;
-		transition: transform 0.25s ease-out;
-	}
+@media (min-width: 1024px) {
+	@media (hover: hover) {
+		.c-site-header__link::after {
+			content: '';
+			position: absolute;
+			width: 100%;
+			transform: scaleX(0);
+			height: 2px;
+			bottom: 0;
+			left: 0;
+			background-color: #006183;
+			transform-origin: bottom center;
+			transition: transform 0.25s ease-out;
+		}
 
-	.c-site-header__link:hover::after {
-		transform: scaleX(1);
-		transform-origin: bottom center;
+		.c-site-header__link:hover::after {
+			transform: scaleX(1);
+			transform-origin: bottom center;
+		}
 	}
 }
+
 .v-enter-active,
 .v-leave-active {
 	transition: opacity 0.3s ease;

@@ -14,6 +14,6 @@ defineProps({
 </script>
 <style lang="postcss">
 :where(.c-reviews) {
-	@apply >=1280:p-[4em] >=1024:px-[2em] px-[1em] py-[2em] relative;
+	@apply >=1280:p-[4em] >=1024:px-[2em] px-[1em] py-[2em] relative overflow-hidden;
 }
 </style>

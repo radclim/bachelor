@@ -10,6 +10,8 @@ import {
 import defaultConfig from './app/assets/js/theme-configuration.default.js';
 import breakpoints from './app/assets/js/breakpoints.js';
 
+console.log('Breakpoints:', breakpoints);
+
 export default defineConfig({
 	presets: [
 		presetCore({
@@ -40,7 +42,7 @@ export default defineConfig({
 		colors: {
 			blue: '#006183',
 			orange: '#F7A941',
-			darkOrange: '#935B11',
+			darkOrange: '#fa920a',
 			gray: '#CDCDCD',
 			white: '#F2F2F2',
 			black: '#1A1A1A',

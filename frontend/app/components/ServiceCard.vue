@@ -72,4 +72,7 @@ defineProps({
 :where(.c-service-card) {
 	@apply bg-white w-33% relative z-2 flex flex-col border-1 border-solid border-black p-[2em];
 }
+:where(.c-cta-button a) {
+	@apply w-full;
+}
 </style>

@@ -6,7 +6,7 @@
 			@mouseleave="startTimer"
 		>
 			<transition :name="transitionName" mode="out-in">
-				<div :key="isVisible" class="p-[1em]">
+				<div :key="isVisible" class=">=1024:p-2em p-[1em]">
 					<p
 						class="font-primary font-semibold text-[1.25rem] mb-[0.5em]"
 					>
@@ -16,7 +16,7 @@
 						{{ items[isVisible].job }}
 					</p>
 					<p
-						class=">=1024:text-[1.25rem] font-quote font-regular italic leading-[1.25em]"
+						class=">=1280:text-[1.25rem] >=1024: text-[1.1rem] font-quote font-regular italic leading-[1.25em]"
 					>
 						{{ items[isVisible].text }}
 					</p>
@@ -109,13 +109,13 @@ onUnmounted(() => {
 
 .fade-left-enter-from,
 .fade-right-leave-to {
-	/* transform: translateX(100%); */
+	transform: translateX(25%);
 	opacity: 0;
 }
 
 .fade-right-enter-from,
 .fade-left-leave-to {
-	/* transform: translateX(-100%); */
+	transform: translateX(-25%);
 	opacity: 0;
 }
 

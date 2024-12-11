@@ -1,6 +1,6 @@
 <template>
 	<div class="c-services">
-		<h2 class="font-primary font-bold text-1.5rem mb-[1rem]">
+		<h2 class="font-primary font-bold text-1.5rem mb-[1em]">
 			{{ content.title }}
 		</h2>
 		<div class="flex flex-col gap-1rem >=1024:(flex-row gap-0)">
