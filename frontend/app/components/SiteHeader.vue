@@ -2,7 +2,7 @@
 	<header class="c-site-header">
 		<nuxt-link to="/#hero" aria-label="Scroll to top">
 			<img
-				src="../assets/svgs/logo.svg"
+				src="/svg/logo.svg"
 				alt=""
 				class="flex-shrink-0 z-20 h-[4rem]"
 			/>
@@ -32,7 +32,7 @@
 			@click="toggleMenu"
 		>
 			<img
-				src="../assets/svgs/bars.svg"
+				src="/svg/bars.svg"
 				alt=""
 				class="w-2em cursor-pointer z-20 block relative >=1024:(hidden)"
 			/>
@@ -44,13 +44,13 @@
 			>
 				<div class="flex justify-between items-center h-5em py-1em">
 					<img
-						src="../assets/svgs/logo_black.svg"
+						src="/svg/logo_black.svg"
 						alt=""
 						class="flex-shrink-0 h-[4rem] z-20"
 					/>
 					<button v-if="isVisible" @click="toggleMenu">
 						<img
-							src="../assets/svgs/bars_black.svg"
+							src="/svg/bars_black.svg"
 							alt=""
 							class="w-2em cursor-pointer z-20 block relative >=1024:(hidden)"
 						/>

@@ -13,7 +13,7 @@
 				class="flex gap-0.5em items-center my-1.25em w-fit h-fit"
 			>
 				<img
-					src="../assets/svgs/messenger.svg"
+					src="/svg/messenger.svg"
 					alt="messenger logo"
 					class="w-[1.5em]"
 				/>
@@ -32,7 +32,7 @@
 				class="flex gap-0.5em items-center my-1.25em w-fit"
 			>
 				<img
-					src="../assets/svgs/mail.svg"
+					src="/svg/mail.svg"
 					alt="messenger logo"
 					class="w-[1.5em]"
 				/>
@@ -55,7 +55,7 @@
 						class="flex gap-[0.5em] items-center h-fit mt-1em"
 					>
 						<img
-							src="../assets/svgs/facebook.svg"
+							src="/svg/facebook.svg"
 							alt="facebook logo"
 							class="w-[1.5em]"
 						/>
@@ -71,7 +71,7 @@
 						class="flex gap-[0.5em] items-center h-fit pt-1em"
 					>
 						<img
-							src="../assets/svgs/instagram.svg"
+							src="/svg/instagram.svg"
 							alt="instagram logo"
 							class="w-[1.5em]"
 						/>
@@ -83,7 +83,7 @@
 					</nuxt-link>
 				</div>
 				<img
-					src="../assets/svgs/logo.svg"
+					src="/svg/logo.svg"
 					alt="brand logo"
 					class="w-6em absolute right-0 -top-1.25em invisible >=605:visible"
 				/>

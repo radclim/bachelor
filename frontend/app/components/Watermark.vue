@@ -1,6 +1,6 @@
 <template>
 	<div class="c-watermark">
-		<img :src="`/_nuxt/assets/svgs/${name}.svg`" alt="" class="" />
+		<img :src="`/svg/${name}.svg`" alt="" class="" />
 	</div>
 </template>
 <script setup>
