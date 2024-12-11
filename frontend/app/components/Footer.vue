@@ -90,9 +90,13 @@
 			</div>
 		</div>
 		<div
-			class="font-primary flex >=1280:(pl-4rem pr-4rem) >=1024:(pl-2rem pr-[2rem]) >=605:(flex-row justify-between) flex-col items-center text-center gap-1rem p-1rem"
+			class="font-primary text-0.85rem flex >=1280:(pl-[4em] pr-[4em]) >=1024:(pl-[2em] pr-[2em]) >=605:(flex-row justify-between) flex-col items-center text-center gap-1em p-1em"
 		>
-			<p>Muskelmekanikeren Blegbanken 3, 7100 Vejle</p>
+			<nuxt-link
+				to="https://www.google.com/maps/dir//Blegbanken+3,+7100+Vejle,+Denmark/@55.7076697,9.5280872,17z/data=!4m18!1m8!3m7!1s0x464c82511d52dbbf:0x3776fb6c29611e9b!2sBlegbanken+3,+7100+Vejle,+Denmark!3b1!8m2!3d55.7076697!4d9.5306621!16s%2Fg%2F11bw4081px!4m8!1m0!1m5!1m1!1s0x464c82511d52dbbf:0x3776fb6c29611e9b!2m2!1d9.5306621!2d55.7076697!3e3?entry=ttu&g_ep=EgoyMDI0MTIwOC4wIKXMDSoASAFQAw%3D%3D"
+				target="_blank"
+				>Muskelmekanikeren Blegbanken 3, 7100 Vejle</nuxt-link
+			>
 			<p>Copyright © 2024 Muskelmekanikeren</p>
 		</div>
 	</div>
