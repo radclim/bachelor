@@ -49,7 +49,7 @@ const props = defineProps({
 
 const isVisible = ref(0);
 let timer = null;
-const transitionName = ref('fade');
+const transitionName = ref('fade-left');
 
 function startTimer() {
 	if (timer) clearTimeout(timer);
